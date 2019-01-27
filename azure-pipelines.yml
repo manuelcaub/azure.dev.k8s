@@ -5,8 +5,8 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 variables:
-  imageName: 'your-container-image-name:$(build.buildId)'
+  imageName: 'hellokube:$(build.buildId)'
 
 steps:
-- script: docker build -f Dockerfile -t $(imageName) .
+- script: docker build -f ./src/HelloKube/Dockerfile -t $(imageName) ./src/HelloKube
   displayName: 'docker build'
