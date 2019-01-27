@@ -10,3 +10,7 @@ variables:
 steps:
 - script: docker build -f ./src/HelloKube/Dockerfile -t $(imageName) ./src/HelloKube
   displayName: 'docker build'
+- task: PublishPipelineArtifact@0
+  inputs:
+    artifactName: 'infrastructure'
+    targetPath: 'deploy/infrastructure'
